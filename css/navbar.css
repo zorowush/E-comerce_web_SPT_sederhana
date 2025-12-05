@@ -1,0 +1,89 @@
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  position: relative;
+  gap: 1rem;
+}
+
+/* Navigation */
+nav[aria-label="Main navigation"] {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav[aria-label="Main navigation"] a {
+  font-size: 0.95rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav[aria-label="Main navigation"] a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+nav[aria-label="Main navigation"] a:hover:after {
+  width: 100%;
+}
+
+/* Navbar Icons */
+.navbar-icons {
+  position: absolute;
+  right: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.navbar-icons a {
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.navbar-icons a:hover {
+  transform: scale(1.1);
+}
+
+.navbar-icons a#login {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.205);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.navbar-icons a#login:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.login-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+}

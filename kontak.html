@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shoes Store | Kontak</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/kontak.css" />
+    <link rel="icon" href="assets/Logobrand.png" type="image/png" />
+    <script src="https://unpkg.com/feather-icons"></script>
+     <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <section class="contact" id="kontak">
+      <div class="contact-container">
+        <!-- Bagian kiri: informasi kontak -->
+        <div class="contact-info">
+          <h2>Hubungi Kami</h2>
+          <p>
+            Kami siap membantu Anda! Silakan hubungi kami untuk pertanyaan,
+            kerjasama, atau informasi lebih lanjut mengenai produk kami.
+          </p>
+
+          <ul>
+            <li>
+              <i data-feather="map-pin"></i> Jl. Merdeka No. 45, Jawa,
+              Indonesia
+            </li>
+            <li><i data-feather="phone"></i> +62 812-3456-7890</li>
+            <li><i data-feather="mail"></i> support@shoestore.id</li>
+          </ul>
+
+          <div class="social-links">
+            <a href="#"><i data-feather="facebook"></i></a>
+            <a href="#"><i data-feather="instagram"></i></a>
+            <a href="#"><i data-feather="twitter"></i></a>
+            <a href="#"><i data-feather="linkedin"></i></a>
+          </div>
+        </div>
+
+        <!-- Bagian kanan: form kontak -->
+        <form id="contactform" class="contact-form">
+          <div class="form-group">
+            <label for="name">Nama Lengkap</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Masukkan nama Anda"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Alamat Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Masukkan email Anda"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Pesan</label>
+            <textarea
+              id="message"
+              placeholder="Tulis pesan Anda di sini..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary">Kirim Pesan</button>
+        </form>
+      </div>
+    </section>
+    <script>
+      feather.replace();
+      // ====== JS: SweetAlert untuk notifikasi kirim pesan ======
+      document
+        .getElementById("contactform")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // mencegah reload halaman
+
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const message = document.getElementById("message").value.trim();
+
+          if (name && email && message) {
+            Swal.fire({
+              icon: "success",
+              title: "Pesan Terkirim!",
+              text: `Terima kasih, ${name}. Kami akan segera menghubungi Anda.`,
+              showConfirmButton: true,
+            });
+
+            // Reset form setelah kirim
+            e.target.reset();
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: "Gagal Mengirim",
+              text: "Pastikan semua kolom sudah diisi dengan benar.",
+            });
+          }
+        });
+    </script>
+  </body>
+</html>

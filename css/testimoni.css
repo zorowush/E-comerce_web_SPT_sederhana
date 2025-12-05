@@ -1,0 +1,146 @@
+/* ===== SOCIAL PROOF / TESTIMONI SECTION ===== */
+.social-proof {
+  background: #ffffff;
+  color: #134d80;
+  padding: 120px 112px;
+}
+
+.social-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 120px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.social-text {
+  flex: 1 1 500px;
+}
+
+.social-text h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.social-text p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.social-stats {
+  flex: 1 1 500px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.stat-box {
+  background: rgba(19, 77, 128, 0.05);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  width: 160px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-6px);
+}
+
+.stat-box h3 {
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  color: #134d80;
+  margin-bottom: 0.5rem;
+}
+
+.stat-box p {
+  font-size: 0.95rem;
+  color: #555;
+  font-family: "Poppins", sans-serif;
+}
+
+.testimonials {
+  background: linear-gradient(to bottom, #97dde8, #134d80);
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.testimonials h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.testimonials h3::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #fff;
+  border-radius: 3px;
+  margin: 0.75rem auto 0;
+}
+.testimonial-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CARD */
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  width: 350px;
+  min-height: 300px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  background: rgba(108, 52, 52, 0.25);
+}
+.testimonial-card .quote {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #fff;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.testimonial-card h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+.testimonial-card span {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.testimonial-card .rating {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #ffd700; /* warna bintang */
+}

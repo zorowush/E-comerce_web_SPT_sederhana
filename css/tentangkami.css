@@ -1,0 +1,136 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom, #97dde8, #134d80);
+  color: #eaf2f5;
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+}
+
+/* Header back button */
+.about-header {
+  padding: 1.5rem 3rem;
+}
+
+.about-header .back-home {
+  color: #134d80;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0.9;
+  transition: 0.3s ease;
+}
+
+.about-header .back-home:hover {
+  opacity: 1;
+  transform: translateX(-4px);
+}
+
+/* Section */
+.about-detail {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Judul utama */
+.about-detail h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Paragraf pembuka */
+.about-detail .intro {
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  color: #eef8ff;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1.2rem 1.5rem;
+  border-radius: 5px;
+  line-height: 1.8;
+}
+
+/* Content layout */
+.about-content {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.about-content .text {
+  flex: 1 1 550px;
+  color: #eef8ff;
+}
+
+.about-content .text h2 {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 1.5rem;
+  font-size: 1.7rem;
+  color: #ffffff;
+  border-left: 4px solid #97dde8;
+  padding-left: 0.6rem;
+}
+
+.about-content .text p,
+.about-content .text ul {
+  color: #eef8ff;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.about-content ul {
+  padding-left: 1.2rem;
+}
+
+.about-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Image */
+.about-content .image {
+  flex: 1 1 500px;
+  text-align: center;
+}
+
+.about-content .image img {
+  width: 100%;
+  max-width: 600px; /* ✅ Lebih besar biar visual dominan */
+  border-radius: 5px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.about-content .image img:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .about-content .text h2 {
+    text-align: center;
+    border-left: none;
+    border-bottom: 3px solid #97dde8;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+  }
+
+  .about-content .image img {
+    max-width: 90%;
+  }
+}
