@@ -1,122 +1,155 @@
 /* ===== FOOTER ===== */
 .footer {
-  background: #0b2b55;
-  color: #ffffff;
-  padding: 60px 20px 20px;
-  font-family: "Poppins", sans-serif;
+  background: var(--dark-bg);
+  color: var(--text-light);
+  padding: 4rem 1.25rem 1rem;
+  border-top: 1px solid var(--glass-border);
+  font-family: var(--font-body);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(151, 221, 232, 0.05), transparent 40%);
+  pointer-events: none;
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  /* Grid Layout */
   gap: 3rem;
+  padding-bottom: 3rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 2rem;
 }
 
-/* Kiri */
-.footer-about {
-  flex: 1 1 300px;
-}
-
+/* Columns */
 .footer-about .footer-logo {
-  width: 250px;
+  max-width: 180px;
   height: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .footer-about p {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  max-width: 400px;
 }
 
-/* Tengah */
-.footer-links {
-  flex: 1 1 200px;
+.footer-links h4,
+.footer-social h4 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+  position: relative;
+  display: inline-block;
 }
 
-.footer-links h4 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  color: #97dde8;
+.footer-links h4::after,
+.footer-social h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 30px;
+  height: 2px;
+  background: var(--accent-color);
 }
 
 .footer-links ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .footer-links ul li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
 .footer-links ul li a {
-  color: rgba(255, 255, 255, 0.85);
-  text-decoration: none;
-  transition: color 0.3s ease;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
 }
 
 .footer-links ul li a:hover {
-  color: #97dde8;
+  color: var(--secondary-color);
+  transform: translateX(5px);
 }
 
-/* Kanan */
-.footer-social {
-  flex: 1 1 200px;
-}
-
-.footer-social h4 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  color: #97dde8;
-}
-
+/* Social Icons */
 .social-icons {
   display: flex;
   gap: 1rem;
 }
 
 .social-icons a {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  transition: 0.3s ease;
+  color: var(--white);
+  transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
-  background: #97dde8;
-  color: #0b2b55;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(151, 221, 232, 0.3);
 }
 
-/* Bar bawah */
+/* Footer Bottom */
 .footer-bottom {
   text-align: center;
-  margin-top: 1.5rem;
+  padding-top: 1.5rem;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-}
-/* FIX: Hilangkan scroll horizontal dan lebar tidak penuh */
-html, body {
-  width: 100%;
-  overflow-x: hidden;
+  color: rgba(255, 255, 255, 0.5);
 }
 
-section, footer, header {
-  width: 100%;
-  max-width: 100vw;
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-about {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-about p,
+  .footer-about .footer-logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-links h4::after,
+  .footer-social h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
 }

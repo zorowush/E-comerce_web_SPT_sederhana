@@ -1,89 +1,160 @@
 /* NAVBAR */
 .navbar {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+  background: rgba(11, 43, 85, 0.7);
+  /* Fallback */
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-bottom: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.25rem;
+.navbar.scrolled {
+  background: rgba(11, 43, 85, 0.95);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 80px;
   position: relative;
-  gap: 1rem;
 }
 
-/* Navigation */
+/* Logo */
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+/* Navigation Links */
 nav[aria-label="Main navigation"] {
   display: flex;
-  flex: 1 1 auto;
-  justify-content: center;
-  position: relative;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
-nav[aria-label="Main navigation"] a {
-  font-size: 0.95rem;
-  color: #fff;
-  text-decoration: none;
-  padding: 0.5rem 0;
+nav[aria-label="Main navigation"] a:not(.navbar-icons a) {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
   position: relative;
   transition: color 0.3s ease;
+  padding: 0.5rem 0;
 }
 
-nav[aria-label="Main navigation"] a:after {
-  content: "";
+nav[aria-label="Main navigation"] a:not(.navbar-icons a)::after {
+  content: '';
   position: absolute;
-  width: 0;
-  height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #fff;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
   transition: width 0.3s ease;
 }
 
-nav[aria-label="Main navigation"] a:hover:after {
+nav[aria-label="Main navigation"] a:not(.navbar-icons a):hover {
+  color: var(--secondary-color);
+}
+
+nav[aria-label="Main navigation"] a:not(.navbar-icons a):hover::after {
   width: 100%;
 }
 
 /* Navbar Icons */
 .navbar-icons {
-  position: absolute;
-  right: 1.25rem;
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
+  margin-left: 2rem;
 }
 
 .navbar-icons a {
-  color: #fff;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.3s ease;
 }
 
 .navbar-icons a:hover {
-  transform: scale(1.1);
+  color: var(--secondary-color);
+  transform: translateY(-2px);
 }
 
+/* Login Button Specifics */
 .navbar-icons a#login {
-  display: inline-flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.205);
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  gap: 0.5rem;
 }
 
 .navbar-icons a#login:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  border-color: var(--secondary-color);
 }
 
 .login-text {
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Hamburger Menu (Hidden by default) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: block;
+    z-index: 1001;
+  }
+
+  nav[aria-label="Main navigation"] {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: var(--primary-color);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6rem 2rem 2rem;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  nav[aria-label="Main navigation"].active {
+    right: 0;
+  }
+
+  nav[aria-label="Main navigation"] a:not(.navbar-icons a) {
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar-icons {
+    margin-top: 2rem;
+    margin-left: 0;
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
