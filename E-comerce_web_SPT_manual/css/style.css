@@ -1,0 +1,151 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom, #97dde8, #134d80);
+  color: #fff;
+  overflow-x: hidden;
+
+}
+
+/* LOGO */
+.logo img {
+  width: auto;
+  height: 50px;
+  object-fit: contain;
+  margin-right: 0.5rem;
+}
+/* ===== FOOTER ===== */
+.footer {
+  background: #0b2b55;
+  color: #ffffff;
+  padding: 60px 20px 20px;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 2rem;
+}
+
+/* Kiri */
+.footer-about {
+  flex: 1 1 300px;
+}
+
+.footer-about .footer-logo {
+  width: 250px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.footer-about p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+/* Tengah */
+.footer-links {
+  flex: 1 1 200px;
+}
+
+.footer-links h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #97dde8;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links ul li a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #97dde8;
+}
+
+/* Kanan */
+.footer-social {
+  flex: 1 1 200px;
+}
+
+.footer-social h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #97dde8;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #97dde8;
+  color: #0b2b55;
+}
+
+/* Bar bawah */
+.footer-bottom {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+/* FIX: Hilangkan scroll horizontal dan lebar tidak penuh */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+section, footer, header {
+  width: 100%;
+  max-width: 100vw;
+}
+
+
+
+

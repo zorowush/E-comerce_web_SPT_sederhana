@@ -1,0 +1,208 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom right, #134d80, #97dde8);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== LOGIN CONTAINER ===== */
+.login-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== FORM WRAPPER ===== */
+.login-form {
+  width: 50%; /*  Setengah layar desktop */
+  max-width: 650px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 3rem 3rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* ===== BACK BUTTON ===== */
+.back-home {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  opacity: 0.85;
+  transition: 0.3s;
+}
+.back-home:hover {
+  opacity: 1;
+  transform: translateX(-3px);
+}
+
+/* ===== FORM TITLE ===== */
+.login-form h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ===== TABLE FORM ===== */
+table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+td {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: 500;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #f2f2f2;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  color: #134d80;
+  outline: none;
+  transition: box-shadow 0.3s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  box-shadow: 0 0 0 3px rgba(151, 221, 232, 0.7);
+}
+
+/* ===== REMEMBER ME ===== */
+.remember {
+  margin-top: 0.5rem;
+}
+
+.remember label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* ===== BUTTON LOGIN ===== */
+.btn-login {
+  width: 100%;
+  background: #134d80;
+  color: #fff;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-login:hover {
+  background: #0f3a5e;
+  transform: translateY(-3px);
+}
+
+/* ===== POLICY, FORGOT, SIGNUP ===== */
+.policy,
+.forgot,
+.signup {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.policy a,
+.forgot,
+.signup a {
+  color: #000;
+  text-decoration: none;
+}
+.policy a:hover,
+.forgot:hover,
+.signup a:hover {
+  text-decoration: underline;
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 2rem 0 1.5rem;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  width: 30%;
+  background: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.divider::before {
+  left: 0;
+}
+.divider::after {
+  right: 0;
+}
+
+/* ===== SOCIAL LOGIN ===== */
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-login button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.social-login button:hover {
+  background: #134d80;
+  color: #fff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .login-form {
+    width: 85%;
+    padding: 2rem;
+  }
+}
